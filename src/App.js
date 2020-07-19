@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import AdminPage from "./AdminPage";
+import MainPage from "./MainPage";
+import NavBar from "./NavBar";
+import OnlineOfferCreate from "./OnlineOfferCreate";
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   return (
+       <div>
+           <Router>
+               <div>
+                   <NavBar/>
+                   <Switch>
+                       <Route path="/admin">
+                           <AdminPage/>
+                       </Route>
+                       <Route path="/onlineoffer">
+                           <OnlineOfferCreate/>
+                       </Route>
+                       <Route path="/">
+                           <MainPage/>
+                       </Route>
+                   </Switch>
+               </div>
+           </Router>
+       </div>
   );
 }
 

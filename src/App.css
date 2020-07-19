@@ -36,3 +36,68 @@
     transform: rotate(360deg);
   }
 }
+
+.navpadding {
+  background-color: rgba(255, 250, 225, 0.31);
+  padding: 20px;
+}
+.flex-container {
+  margin-right: 50px;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-item {
+  margin-left: 20px;
+  -webkit-order: 1;
+  order: 1;
+}
+.backgroundsmooth{
+  margin: 70px;
+  height: 85%;
+  background-color: rgba(253, 249, 241, 0.97);
+  border: 1px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 50px;
+}
+.bigtext{
+  margin: 50px;
+}
+.longtext {
+  margin: 80px;
+}
+.grid-container-double{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: max-content max-content ;
+  gap: 30px;
+}
+
+.card-one{
+  width: 650px;
+  height: 600px;
+  background-color: rgba(191, 135, 69, 0.34);
+  border: 1px solid #0d2158;
+}
+.card-two{
+  width: 650px;
+  height: 600px;
+  background-color: rgba(191, 135, 69, 0.37);
+  border: 1px solid #0d2158;
+}
+.card-second {
+  margin-top: 30px;
+  padding-left: 40px;
+}
+.wrapper1{
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.backgroundsmooth-big-card{
+  margin: 70px;
+  height: 85%;
+  background-color: rgb(222, 198, 176);
+  border: 1px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 50px;
+}
