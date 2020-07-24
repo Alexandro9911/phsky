@@ -2,6 +2,11 @@ import React, {Component} from "react";
 import ImageCard from "./ImageCard";
 import DoubleCard from "./DoubleCard";
 import BigCard from "./BigCard";
+import Deals from "./Deals";
+import MessageToUS from "./MessageToUs";
+import MapBlock from "./MapBlock";
+import Callbacks from "./Callbacks";
+import DownBar from "./DownBar";
 
 class MainPage extends Component {
     constructor(props) {
@@ -14,6 +19,11 @@ class MainPage extends Component {
                 <ImageCard/>
                 <DoubleCard/>
                 <BigCard/>
+                <Deals/>
+                <MessageToUS/>
+                <Callbacks/>
+                <MapBlock/>
+                <DownBar/>
             </div>
         );
     }

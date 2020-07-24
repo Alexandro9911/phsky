@@ -1,0 +1,51 @@
+import React, {Component} from "react";
+
+class MessageToUS extends Component {
+    constructor(props) {
+        super(props);
+        this.onSubmitHandler = this.onSubmitHandler.bind(this);
+    }
+
+  async onSubmitHandler(e){
+        e.preventDefault();
+ }
+
+    render() {
+        return (
+            <div>
+                <div className="card bg-dark text-dark">
+                    <img src={require('./images/messagepic.png')} className="card-img" alt="..."/>
+                    <div className="card-img-overlay">
+                        <div className="backgroundsmooth-form App">
+                            <div className="container">
+                                <div className='text-center'>
+                                    <div className="bigtext"><h3 className="font-weight-light font-italic">Связаться с нами</h3></div>
+                                    <h5 className="font-weight">«Двери. Окна. От завода ОАО "АВАНГАРД"» сделает для вас больше, чем вы ожидаете. У вас есть вопрос, комментарий или пожелание? Свяжитесь с нами, мы с удовольствием поможем.</h5>
+                                        <h6>СПб, Кондратьевский пр., 72</h6>
+                                        <h6>danila.shestakov.1999@gmail.com</h6>
+                                        <h6>+79119980800</h6>
+                                        <h6>+79119980080</h6>
+                                </div>
+                                <form onSubmit={this.onSubmitHandler}>
+                                    <div className="form-inner">
+                                        <input type="text" placeholder="Имя" required={true}/>
+                                        <input type="text" placeholder="Адрес"/>
+                                        <div className="form-row">
+                                            <div className="col"><input type="text" placeholder="Эл. почта" required={true}/></div>
+                                            <div className="col"><input type="text" placeholder="Телефон" required={true}/></div>
+                                        </div>
+                                        <input type="text" placeholder="Тема" required={true}/>
+                                        <textarea placeholder="Ваш комментарий"/>
+                                        <button type="submit">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default MessageToUS;
