@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CallbacksPage from "./CallbacksPage";
+import MakeCallBack from "./MakeCallBack";
 
 
 class Callbacks extends Component {
@@ -31,8 +32,9 @@ class Callbacks extends Component {
         return (
             <div>
                 <div>
-                    <CallbacksPage content={this.state.content}/>
+                    <div className="wrapper2"> <h1 className="font-weight-light font-italic App">Отзывы</h1></div>
                 </div>
+                <div className="container"><CallbacksPage content={this.state.content}/></div>
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item"><a className="page-link" onClick={this.onClickPrevHandler}>Предыдущая</a>
@@ -42,6 +44,12 @@ class Callbacks extends Component {
                         </li>
                     </ul>
                 </nav>
+                <div className="dropdown-divider"/>
+                <div className="container">
+                    <div className="center-align">
+                        <MakeCallBack/>
+                    </div>
+                </div>
             </div>
         );
     }

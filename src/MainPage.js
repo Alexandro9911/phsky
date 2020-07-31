@@ -21,8 +21,8 @@ class MainPage extends Component {
                 <BigCard/>
                 <Deals/>
                 <MessageToUS/>
-                <Callbacks/>
                 <MapBlock/>
+                <Callbacks/>
                 <DownBar/>
             </div>
         );

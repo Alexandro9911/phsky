@@ -39,7 +39,8 @@
 
 .navpadding {
   background-color: rgba(255, 250, 225, 0.31);
-  padding: 20px;
+  padding: 1% 5%;
+  width: auto;
 }
 .flex-container {
   margin-right: 50px;
@@ -52,45 +53,59 @@
   order: 1;
 }
 .backgroundsmooth{
-  margin: 70px;
-  height: 85%;
+  margin: 10%;
+  height: 70%;
+  width: auto;
   background-color: rgba(253, 249, 241, 0.97);
   border: 1px;
   border-radius: 5px 5px 5px 5px;
-  padding: 50px;
+  padding: 2%;
+  position: inherit;
 }
 
 .backgroundsmooth-form{
-  margin: 70px;
-  height: 85%;
+  margin: 5%;
+  height: auto;
   background-color: rgba(253, 249, 241, 0.87);
   border: 1px;
   border-radius: 5px 5px 5px 5px;
-  padding: 50px;
+  padding: 2%;
 }
 
 .bigtext{
-  margin: 50px;
+  margin: 10%;
 }
 .longtext {
-  margin: 80px;
+  margin-top: 9%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 .grid-container-double{
-  padding: 20px;
+  position: relative;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding-right: 6%;
+  margin-bottom: 5%;
   display: grid;
-  grid-template-columns: max-content max-content ;
-  gap: 30px;
+  grid-template-columns: 50% 50% ;
+  gap: 1%;
+}
+
+.center-align{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .card-one{
-  width: 650px;
-  height: 600px;
+  padding-top: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: rgba(191, 135, 69, 0.34);
   border: 1px solid #0d2158;
 }
 .card-two{
-  width: 650px;
-  height: 600px;
   background-color: rgba(191, 135, 69, 0.37);
   border: 1px solid #0d2158;
 }
@@ -102,6 +117,10 @@
   margin-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.map{
+  position: page;
 }
 
 .wrapper2{
@@ -121,9 +140,8 @@
 * {box-sizing: border-box;}
 .transparent {
   position: relative;
-  max-width: 400px;
-  padding: 60px 50px;
-  margin: 50px auto 0;
+  max-width: initial;
+  padding: 5%;
   background-size: cover;
 }
 .transparent:before {
@@ -135,7 +153,10 @@
   bottom: 0;
   background: linear-gradient(to right bottom,rgba(43, 44, 78, .5),rgba(104, 22, 96, .5));
 }
-.form-inner {position: relative;}
+.form-inner {
+  position: sticky;
+  height: fit-content;
+}
 .form-inner h2 {
   position: relative;
   margin-top: 0;
@@ -170,6 +191,7 @@
   padding: 0 15px;
   margin: 10px 0 15px;
   line-height: 40px;
+  min-height: 5%;
   color: black;
   background: rgba(255,255,255,.2);
   font-family: 'Roboto', sans-serif;
@@ -182,6 +204,7 @@
   padding: 0 15px;
   margin: 10px 0 15px;
   line-height: 23px;
+  min-height: 5%;
   color: black;
   background: rgba(255,255,255,.2);
   font-family: 'Roboto', sans-serif;
@@ -234,3 +257,84 @@
   transform: rotate(45deg);
 }
 .form-inner input[type="submit"] {background: #1762EE;}
+
+.rating-mini {
+  display: inline-block;
+  font-size: 0;
+}
+.rating-mini span {
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+  color: lightgrey;
+}
+.rating-mini > span:before {
+  content: '★';
+}
+.rating-mini > span.active {
+  color: gold;
+}
+
+.rating-area {
+  overflow: hidden;
+  width: 265px;
+  margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+  display: none;
+}
+.rating-area:not(:checked) > label {
+  float: right;
+  width: 42px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 50px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+  content: '★';
+}
+.rating-area > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+  position: relative;
+}
+
+
+.items{
+  margin: 10%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 2%;
+}
+.item{
+  width:100%;
+  font-size:2vw;
+}
+.img{
+  max-width:100%;
+  max-height: 100%;
+}

@@ -14,20 +14,23 @@ class MessageToUS extends Component {
         return (
             <div>
                 <div className="card bg-dark text-dark">
-                    <img src={require('./images/messagepic.png')} className="card-img" alt="..."/>
+                    <img src={require('./images/messagepic.png')} className="img" alt="..."/>
                     <div className="card-img-overlay">
                         <div className="backgroundsmooth-form App">
                             <div className="container">
                                 <div className='text-center'>
-                                    <div className="bigtext"><h3 className="font-weight-light font-italic">Связаться с нами</h3></div>
+                                    <h3 className="font-weight-light font-italic">Связаться с нами</h3>
+                                    <br/>
                                     <h5 className="font-weight">«Двери. Окна. От завода ОАО "АВАНГАРД"» сделает для вас больше, чем вы ожидаете. У вас есть вопрос, комментарий или пожелание? Свяжитесь с нами, мы с удовольствием поможем.</h5>
-                                        <h6>СПб, Кондратьевский пр., 72</h6>
+                                    <br/>
+                                    <h6>СПб, Кондратьевский пр., 72</h6>
                                         <h6>danila.shestakov.1999@gmail.com</h6>
                                         <h6>+79119980800</h6>
                                         <h6>+79119980080</h6>
                                 </div>
+                                <br/>
                                 <form onSubmit={this.onSubmitHandler}>
-                                    <div className="form-inner">
+                                    <div className="form-inner form-group">
                                         <input type="text" placeholder="Имя" required={true}/>
                                         <input type="text" placeholder="Адрес"/>
                                         <div className="form-row">
