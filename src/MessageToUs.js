@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import IconsBlock from "./IconsBlock";
 
 class MessageToUS extends Component {
     constructor(props) {
@@ -21,18 +22,19 @@ class MessageToUS extends Component {
                                 <div className='text-center'>
                                     <h3 className="font-weight-light font-italic">Связаться с нами</h3>
                                     <br/>
-                                    <h5 className="font-weight">«Двери. Окна. От завода ОАО "АВАНГАРД"» сделает для вас больше, чем вы ожидаете. У вас есть вопрос, комментарий или пожелание? Свяжитесь с нами, мы с удовольствием поможем.</h5>
+                                    <h6 className="font-weight">«Двери. Окна. От завода ОАО "АВАНГАРД"» сделает для вас больше, чем вы ожидаете. У вас есть вопрос, комментарий или пожелание? Свяжитесь с нами, мы с удовольствием поможем.</h6>
                                     <br/>
                                     <h6>СПб, Кондратьевский пр., 72</h6>
                                         <h6>danila.shestakov.1999@gmail.com</h6>
-                                        <h6>+79119980800</h6>
-                                        <h6>+79119980080</h6>
+                                        <h6>+79119980800 +79119980080</h6>
+                                    <IconsBlock/>
                                 </div>
-                                <br/>
                                 <form onSubmit={this.onSubmitHandler}>
                                     <div className="form-inner form-group">
-                                        <input type="text" placeholder="Имя" required={true}/>
-                                        <input type="text" placeholder="Адрес"/>
+                                        <div className="form-row">
+                                            <div className="col"><input type="text" placeholder="Имя" required={true}/></div>
+                                            <div className="col"><input type="text" placeholder="Адрес"/></div>
+                                        </div>
                                         <div className="form-row">
                                             <div className="col"><input type="text" placeholder="Эл. почта" required={true}/></div>
                                             <div className="col"><input type="text" placeholder="Телефон" required={true}/></div>
