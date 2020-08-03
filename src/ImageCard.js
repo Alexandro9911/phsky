@@ -5,6 +5,7 @@ class ImageCard extends Component {
         super(props);
     }
 
+
     render() {
         return (
             <div>
@@ -22,9 +23,11 @@ class ImageCard extends Component {
                                     2000 года. Умение прислушаться к пожеланиям клиентов и подстроиться у временным рамкам,
                                     выгодно отличают нас от других компаний города.
                                 </h6></div>
-                                <div className="btn btn-outline-secondary small">
-                                    Связаться
-                                </div>
+                                <a href="#messagetous">
+                                    <div className="btn btn-outline-secondary small" onClick={this.onClick}>
+                                        Связаться
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

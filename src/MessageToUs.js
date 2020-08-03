@@ -13,7 +13,7 @@ class MessageToUS extends Component {
 
     render() {
         return (
-            <div>
+            <div id="messagetous">
                 <div className="card bg-dark text-dark">
                     <img src={require('./images/messagepic.png')} className="img" alt="..."/>
                     <div className="card-img-overlay">

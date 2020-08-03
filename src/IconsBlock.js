@@ -14,7 +14,7 @@ class IconsBlock extends Component {
                         <img src={require('./images/inst.png')} alt="..."/>
                     </div>
                     <div className="link">
-                        <h4><a href="#">link to inst</a></h4>
+                        <h5 className="font-weight-light"><a href="#">link to inst</a></h5>
                     </div>
                 </div>
             </div>

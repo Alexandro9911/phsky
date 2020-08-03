@@ -14,9 +14,9 @@ class MakeCallBack extends Component {
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Оставьте свой отзыв</h5>
-                        <MakeStars/>
-                        <p className="card-text">Напишите свое впечатление о нашей работе! Нам это тоже важно</p>
                         <form>
+                        <MakeStars />
+                        <p className="card-text">Напишите свое впечатление о нашей работе! Нам это тоже важно</p>
                             <div className="row">
                                 <div className="col">
                                     <input type="text" className="form-control" placeholder="Представьтесь пожалуйста" required={true}/>

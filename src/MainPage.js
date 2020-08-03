@@ -7,6 +7,7 @@ import MessageToUS from "./MessageToUs";
 import MapBlock from "./MapBlock";
 import Callbacks from "./Callbacks";
 import DownBar from "./DownBar";
+import TopButton from "./TopButton";
 
 class MainPage extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class MainPage extends Component {
     render() {
         return (
             <div>
+                <TopButton/>
                 <ImageCard/>
                 <DoubleCard/>
                 <BigCard/>

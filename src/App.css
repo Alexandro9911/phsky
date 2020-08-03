@@ -38,8 +38,8 @@
 }
 
 .navpadding {
-  background-color: rgba(255, 250, 225, 0.31);
-  padding: 1% 5%;
+  background-color: rgb(252, 248, 229);
+  padding: 0.5% 3%;
   width: auto;
 }
 .flex-container {
@@ -338,6 +338,11 @@
   border: 1px solid #0d2158;
 }
 
+.logo{
+  max-width:5%;
+  max-height: 5%;
+}
+
 
 .links{
   display:-webkit-box;
@@ -368,4 +373,11 @@ a:active {
 
 a:visited {
   color: black;
+}
+
+.onlineoffer{
+  margin: 10%;
+}
+.textoffer{
+  margin: 8%;
 }
