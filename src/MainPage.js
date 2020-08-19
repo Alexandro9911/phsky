@@ -18,8 +18,8 @@ class MainPage extends Component {
         return (
             <div>
                 <TopButton/>
-                <ImageCard/>
-                <DoubleCard/>
+                <ImageCard flag={"0"}/>
+                <DoubleCard flag={"0"}/>
                 <BigCard/>
                 <Deals/>
                 <MessageToUS/>

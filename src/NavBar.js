@@ -20,7 +20,7 @@ class NavBar extends Component {
                                 <Link className="text-dark" to="/"> Главная </Link>
                             </div>
                             <div className="flex-item">
-                                <Link className="text-dark" to="/onlineoffer"> Онлайн запись </Link>
+                                <Link className="text-dark" to="onlineoffer"> Онлайн запись </Link>
                             </div>
                         </div>
                     </nav>
