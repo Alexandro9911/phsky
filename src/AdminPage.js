@@ -23,14 +23,31 @@ class AdminPage extends Component {
         this.setState({enteredPassw: event.target.value});
     }
 
-    onSubmitHandler(e){
+   async onSubmitHandler(e){
         e.preventDefault();
-        // пока что так, потом добавлю проверку с сервера на пароли администратора
-        if(this.state.enteredLogin === "Alexandro" && this.state.enteredPassw === "1234"){
+       let answ = '';
+       let resp = await window.fetch("http://localhost/phsky/loginadm.php", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+           },
+           body: new URLSearchParams({
+               email: this.state.enteredLogin,
+               passw: this.state.enteredPassw
+           })
+       })
+           .then(response => response.text())
+           .then(result => answ = result);
+        if(answ === "ok"){
             window.sessionStorage.setItem("adm",this.state.enteredLogin);
             window.location.href = "http://localhost:3000/#/administrator";
         } else {
-           alert("Неверный логин или пароль");
+            if(answ === "wrong"){
+                alert("Неверный логин или пароль");
+            } else  {
+                alert("Возникла ошибка в обращении к базе данных. Попробуйте позже");
+            }
+
         }
     }
 

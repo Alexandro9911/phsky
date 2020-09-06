@@ -51,7 +51,7 @@ class ImageCard extends Component {
                                         <textarea className="input-group font-weight-light font-italic text-center"
                                                   value={this.state.title}
                                                   onChange={this.changeTitle}/>
-                                            <button id={"2"} className="btn btn-sm btn-outline-primary justify-content-center">
+                                            <button id={"2"} className="btn btn-sm btn-outline-primary justify-content-center marginer">
                                                 сохранить
                                             </button>
                                         </div>
@@ -61,7 +61,7 @@ class ImageCard extends Component {
                                         <textarea className="transparent form-inner input-group font-weight-light text-center"
                                                   value={this.state.bigtext}
                                                   onChange={this.changeBigText}/>
-                                            <button id={"2"} className="btn btn-sm btn-outline-primary justify-content-center">
+                                            <button id={"2"} className="btn btn-sm btn-outline-primary justify-content-center marginer">
                                                 сохранить
                                             </button>
                                         </div>
@@ -87,8 +87,8 @@ class ImageCard extends Component {
                                         {this.state.bigtext}
                                     </h6></div>
                                     <a href="#messagetous">
-                                        <div className="btn btn-outline-secondary small" onClick={this.onClick}>
-                                            Связаться
+                                        <div className="form-inner form-group">
+                                            <button>Связаться</button>
                                         </div>
                                     </a>
                                 </div>

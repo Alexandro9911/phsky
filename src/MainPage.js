@@ -20,9 +20,9 @@ class MainPage extends Component {
                 <TopButton/>
                 <ImageCard flag={"0"}/>
                 <DoubleCard flag={"0"}/>
-                <BigCard/>
-                <Deals/>
-                <MessageToUS/>
+                <BigCard flag={"0"}/>
+                <Deals flag={"0"}/>
+                <MessageToUS flag={"0"}/>
                 <MapBlock/>
                 <Callbacks/>
                 <DownBar/>
