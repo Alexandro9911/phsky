@@ -47,7 +47,7 @@ class Deals extends Component {
                 .then(response => {
                     response.json().then(js => {
                         answ = js;
-                        window.sessionStorage.setItem("cards", JSON.stringify(answ));
+                        window.sessionStorage.setItem("cardsadmin", JSON.stringify(answ));
                         this.setState({str: answ})
                     });
                 })
@@ -59,7 +59,7 @@ class Deals extends Component {
         if(this.state.flag === "0"){
             let str = window.sessionStorage.getItem("cards");
             let cards;
-            if (str === null) {
+            if (str === '[]' || str === null || str === undefined) {
                 return (
                     <div className="wrapper2 App">
                         <div className="wrapper2">
@@ -71,7 +71,7 @@ class Deals extends Component {
                     </div>
                 );
             } else {
-                cards = Object.values(JSON.parse(window.sessionStorage.getItem("cards")));
+                cards = Object.values(JSON.parse(str));
                 const items = cards.map((card, i) =>
                     <div className="card">
                         <div className="card-body">
@@ -79,7 +79,7 @@ class Deals extends Component {
                             <p className="card-text">{card['maintext']}</p>
                         </div>
                         <div className="card-footer">
-                            <small className="text-muted">Акция действительна до дд.мм.ггг.</small>
+                            <small className="text-muted">Двери. Окна. От завода ОАО "АВАНГАРД"</small>
                         </div>
                     </div>
                 );
@@ -91,13 +91,11 @@ class Deals extends Component {
                             <h5 className="font-weight-light">Подробнее о всех предложениях</h5>
                         </div>
                         <div className="card-deck">{Object.values(items)}</div>
-
                     </div>
                 );
             }
         } else {
-            let str = window.sessionStorage.getItem("cards");
-            let cards;
+            let str = window.sessionStorage.getItem("cardsadmin");
             if (str === null) {
                 return (
                     <div className="wrapper2 App">
@@ -111,7 +109,7 @@ class Deals extends Component {
                     </div>
                 );
             } else {
-                cards = Object.values(JSON.parse(window.sessionStorage.getItem("cards")));
+               let cards = Object.values(JSON.parse(window.sessionStorage.getItem("cardsadmin")));
                 const items = cards.map((card, i) =>
                     <div className="card">
                         <div className="card-body">
@@ -120,7 +118,10 @@ class Deals extends Component {
                         </div>
                         <div className="card-footer">
                             <small className="text-muted">
-                                <CardButtons id={card['id']} status={card['active']}/>
+                                <CardButtons ident={card['id']}
+                                             status={card['active']}
+                                             index={i}
+                                />
                             </small>
                         </div>
                     </div>
@@ -132,7 +133,8 @@ class Deals extends Component {
                             <br/>
                             <h5 className="font-weight-light">Подробнее о всех предложениях</h5>
                         </div>
-                        <div className="card-deck">{Object.values(items)}</div>
+                        <div className="row row-cols-1 row-cols-md-3">{Object.values(items)}</div>
+                        <div className="dropdown-divider"/>
                         <AddCard/>
                     </div>
                 );

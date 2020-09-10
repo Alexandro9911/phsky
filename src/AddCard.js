@@ -37,6 +37,7 @@ class AddCard extends Component {
             .then(result => answ = result);
         if (answ === "ok") {
             alert("Успешно добавлено!");
+            window.location.reload();
         } else {
             alert("Возникла ошибка в обращении к базе данных. Попробуйте позже");
         }
@@ -62,6 +63,7 @@ class AddCard extends Component {
                                               value={this.state.title}
                                               onChange={this.titleChange}
                                               placeholder={"Заголовок"}
+                                              required={true}
                                     />
                                 </h5>
                                 <p className="card-text">
@@ -69,11 +71,12 @@ class AddCard extends Component {
                                               value={this.state.maintext}
                                               onChange={this.maintextChange}
                                               placeholder={"Основной текст"}
+                                              required={true}
                                     />
                                 </p>
                             </div>
                             <div className="card-footer">
-                                <small className="text-muted">Акция действительна до дд.мм.ггг.</small>
+                                <small className="text-muted">Двери. Окна. От завода ОАО "АВАНГАРД"</small>
                             </div>
                         </div>
                         <button className="btn btn-sm btn-outline-primary justify-content-center marginer">

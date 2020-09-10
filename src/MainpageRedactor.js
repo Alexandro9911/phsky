@@ -12,14 +12,16 @@ class MainpageRedactor extends Component {
 
     }
 
+
+
     render() {
         return (
             <div>
                 <ImageCard flag = {"1"}/>
                 <DoubleCard flag={"1"}/>
                 <BigCard flag={"1"}/>
-                <MessageToUS flag={"1"}/>
                 <Deals flag={"1"}/>
+                <MessageToUS flag={"1"}/>
             </div>
         );
     }
