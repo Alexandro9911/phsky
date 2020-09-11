@@ -14,19 +14,72 @@ class Callbacks extends Component {
         this.onClickPrevHandler = this.onClickPrevHandler.bind(this);
     }
 
-    onClickNextHandler(){
+    async onClickNextHandler(e) {
+        e.preventDefault();
+        let curr = this.state.currpage + 1;
+        this.setState({currpage: curr})
+        let answ = '';
+        let resp = await window.fetch("http://localhost/phsky/getCallbacks.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                dir: "high",
+                page: this.state.currpage.toString()
+            })
+        })
+            .then(response => response.json())
+            .then(result => answ = result);
+        window.sessionStorage.setItem("callbacks", JSON.stringify(answ));
 
     }
 
-    onClickPrevHandler(){
+  async onClickPrevHandler(e){
+      e.preventDefault();
         if(this.state.currpage === 1){
 
         } else {
-             let curr = this.state.currpage -1;
+            let curr = this.state.currpage -1;
             this.setState({currpage : curr})
-
+            let answ = '';
+            let resp = await window.fetch("http://localhost/phsky/getCallbacks.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                },
+                body: new URLSearchParams({
+                    dir: "low",
+                    page: this.state.currpage.toString()
+                })
+            })
+                .then(response => response.json())
+                .then(result => answ = result);
+                window.sessionStorage.setItem("callbacks",JSON.stringify(answ));
         }
     }
+
+    componentDidMount = async () => {
+        let answ = '';
+        await window.fetch("http://localhost/phsky/getCallbacks.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: new URLSearchParams({
+                dir: "first",
+                page: this.state.currpage.toString()
+            })
+        })
+            .then(response => {
+                response.json().then(js => {
+                    answ = js;
+                    window.sessionStorage.setItem("callbacks", JSON.stringify(answ));
+                    this.setState({content: answ})
+                });
+            })
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (

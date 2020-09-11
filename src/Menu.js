@@ -12,6 +12,11 @@ export  default  function Menu() {
                         Редактор главной страницы
                     </div>
                 </Link>
+                {/*<Link to={`/administrator/managerpost`}>*/}
+                    <div className="btn btn-outline-secondary btn-sm w-100 m-lg-1">
+                        Журнал записи
+                    </div>
+                {/*</Link>*/}
                 <Link to={`/administrator/managerpost`}>
                     <div className="btn btn-outline-secondary btn-sm w-100 m-lg-1">
                         Менеджер рассылок
